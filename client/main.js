@@ -41,3 +41,19 @@ getData('http://127.0.0.1:5000/api/items')
     .then((data) => {
         console.log(data);
     })
+
+document.getElementById('form').addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const data = {
+        title: document.getElementById('title').value,
+        description: document.getElementById('description').value,
+        date: document.getElementById('date').value,
+    }
+
+    postData('http://127.0.0.1:5000/api/items', data)
+        .then((data) => {
+            console.log(data);
+        })
+
+})
